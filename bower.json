@@ -1,0 +1,8 @@
+{
+  "name": "prerelease",
+  "version": "0.0.0",
+  "authors": [
+    "Timothy McDuffie <timothy.mcduffie@gmail.com>"
+  ],
+  "private": true
+}
