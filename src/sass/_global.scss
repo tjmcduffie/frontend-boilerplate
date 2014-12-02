@@ -1,0 +1,71 @@
+h1 {
+  font-family: $headline-font;
+  font-weight: 300;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $headline-font;
+  font-style: italic;
+  font-weight: 600;
+}
+
+// .block {
+//   border: 15px $offwhite solid;
+//   margin-top: 50px;
+//   padding: 15px;
+//   position: relative;
+
+//   & > * {
+//     position: relative;
+//     z-index: 3;
+//   }
+
+//   &:after {
+//     background: $offwhite;
+//     border:1px $darkgrey dashed;
+//     content: "";
+//     @include position(absolute, -5px);
+//   }
+
+//   > :first-child {
+//     margin-top: 0px;
+//   }
+
+//   > :last-child {
+//     margin-bottom: 0px;
+//   }
+// }
+
+// .button {
+//   background: linear-gradient(180deg, adjust-lightness(white, -15), adjust-lightness(white, -25));
+//   border: 1px $darkgrey solid;
+//   border-radius: 3px;
+//   color: $darkgrey;
+//   display: block;
+//   font-family: $headline-font;
+//   font-weight: 700;
+//   padding: 13% 10%;
+//   text-decoration: none;
+
+//   span {
+//     display: inline-block;
+//     line-height: 1rem;
+//     max-width: 70%;
+//     vertical-align: middle;
+//   }
+
+//   i {
+//     @extend span;
+//     margin-right: 10%;
+//     max-width: 20%;
+
+//     img {
+//       display: block;
+//       max-width: 100%;
+//     }
+//   }
+// }

@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $offwhite;
+  color: $darkgrey;
+  @include establish-baseline($base-font-size);
+}
+
+.background {
+  background-color: $darkgrey;
+  @include position(fixed);
+  z-index: -1;
+
+  &:before {
+    background: url(/img/mallorca-farm-house-large-1x.jpg) no-repeat center;
+    background-size: cover;
+    content: "";
+    @include position(fixed);
+  }
+
+  &:after {
+    background-color: black;
+    content: "";
+    opacity: .70;
+    @include position(fixed);
+  }
+}
+
+main,
+footer {
+  @include span(12 of 12);
+}
+
+main {
+  > article,
+  > aside {
+    @extend .row;
+    @include push(1 of 12);
+    @include span(10 of 12);
+  }
+
+  > article {
+    .primary {
+      @include span(first 4 of 10);
+    }
+
+    .summary{
+      @include span(last 6 of 10);
+    }
+
+    .skills {
+      @extend .summary;
+      @include push(4 of 10);
+    }
+  }
+
+  .summary,
+  .skills,
+  .most-recent-project,
+  .links {
+    @extend .block;
+  }
+}
+
+footer {
+  ul {
+    color: $offwhite;
+    @extend .row;
+    @include push(1 of 12);
+    @include span(10 of 12);
+  }
+}
+
+
+header.primary {
+  color: $offwhite;
+  margin-top: 50px;
+
+  h1 {
+    margin-top: 0px;
+  }
+
+  .subtitle {
+    display: block;
+    font-style: italic;
+    font-weight: 600;
+    @include adjust-font-size-to(1.2 * $base-font-size);
+  }
+}
+
+
+
+.skills {
+  dt,
+  dd,
+  ul,
+  li {
+    display: inline;
+  }
+
+  dt {
+    font-weight: bold;
+
+    &:before {
+      content: "";
+      display: block;
+      margin-top: 20px;
+    }
+
+    &:after {
+      content: ":";
+    }
+  }
+
+  dd, ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    &:after {
+      content: ",";
+    }
+    &:last-child:after {
+      content: "";
+    }
+  }
+}
+
+.most-recent-project {
+  @include span(last 6 of 10);
+}
+
+.links {
+  // @include pull(5 of 12);
+  @include span(first 4 of 10);
+
+  ul {
+    padding-left: 0;
+    margin-top: 0;
+    @include span(4 of 4);
+  }
+
+  li {
+    list-style-type: none;
+    @include span(2 of 4);
+
+    &:first-child {
+      @include first;
+    }
+
+    &:last-child {
+      @include last;
+    }
+  }
+}
