@@ -1,0 +1,52 @@
+$breakpoints: (
+  small: '0px',
+  medium: '670px',
+  large: '968px',
+  extralarge: '1400px'
+) !default;
+
+
+@mixin when-breakpoint($breakpoint) {
+ @each $key, $value in $breakpoints {
+    @if $breakpoint == $key {
+      @if $value == 0 {
+        @content;
+      } @else {
+        @media (min-width: $value) {
+          @content;
+        }
+      }
+    }
+  }
+}
+
+@mixin position($type: relative, $top: 0px, $right: null, $bottom: null, $left: null) {
+// @mixin position($type, $coords) {
+
+  @if not $right {
+    $right: $top;
+  }
+
+  @if not $bottom {
+    $bottom: $top;
+  }
+
+  @if not $left {
+    $left: $right;
+  }
+
+  bottom: $bottom;
+  left: $left;
+  position: $type;
+  right: $right;
+  top: $top;
+}
+
+@mixin grad-bkgd($start) {
+  $end: adjust-lightness($start, -4%);
+  @include background-image(linear-gradient($start, $end));
+}
+
+@function cubicBezierTransition($property) {
+  @return $property 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985)
+}
