@@ -1,9 +1,10 @@
 {
-  "name": "prerelease",
+  "name": "day-calendar-ui",
   "version": "0.0.0",
   "authors": [
     "Timothy McDuffie <timothy.mcduffie@gmail.com>"
   ],
+  "main": "index.html",
   "private": true,
   "devDependencies": {
     "jasmine": "~2.0.4"
