@@ -79,7 +79,6 @@ module.exports = function(grunt) {
           hostname: 'localhost',
           base: ['public'],
           directory: 'public',
-          // keepalive: false,
           debug: true,
           livereload: 3002,
           open: true
@@ -203,7 +202,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-newer');
 
   // Default task.
-  grunt.registerTask('default', ['bower', 'compass:dev', 'imageprep','jshint', 'karma:unit', 'connect:site',
+  grunt.registerTask('default', ['bower', 'compass:dev', 'imageprep', 'jshint', 'karma:unit', 'connect:site',
       'watch']);
   grunt.registerTask('imageprep', ['newer:responsive_images:backgrounds', 'newer:imagemin:backgrounds']);
 
